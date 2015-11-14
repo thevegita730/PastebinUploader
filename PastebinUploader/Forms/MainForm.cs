@@ -22,8 +22,10 @@ namespace PastebinUploader
             {
                 btnSubmit.Enabled = false;
 
-                Pastebin pastebin = new Pastebin("583429dd9faffdda390145ae727bfbef");
-                string response = await pastebin.CreatePaste(txtPasteTitle.Text, txtPasteContent.Text);
+                string response = string.Empty;
+
+                using (var pastebin = new Pastebin("583429dd9faffdda390145ae727bfbef"))
+                    response = await pastebin.CreatePaste(txtPasteTitle.Text, txtPasteContent.Text);
 
                 if (!response.Contains("Bad API request"))
                 {

@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 
 namespace PastebinUploader
 {
-    public class Pastebin
+    public class Pastebin : IDisposable
     {
-        public string DeveloperKey { get; set; }
+        private WebClient _wc;
+        private readonly string DeveloperKey;
 
         public Pastebin(string key)
         {
+            _wc = new WebClient();
+            _wc.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+
             DeveloperKey = key;
         }
 
@@ -22,22 +26,21 @@ namespace PastebinUploader
         {
             var postDataCollection = new NameValueCollection
             {
-                {"api_dev_key", DeveloperKey},
-                {"api_option", "paste"},
-                {"api_paste_name", pasteTitle},
-                {"api_paste_code", pasteContent}
+                { "api_dev_key", DeveloperKey},
+                { "api_option", "paste"},
+                { "api_paste_name", pasteTitle},
+                { "api_paste_code", pasteContent}
             };
 
             string postDataRaw = string.Join("", postDataCollection.AllKeys.Select(x => string.Format("{0}={1}&", x, postDataCollection[x])));
 
-            var request = (HttpWebRequest)WebRequest.Create(new Uri("http://pastebin.com/api/api_post.php"));
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
+            var response = await _wc.UploadStringTaskAsync("http://pastebin.com/api/api_post.php", "POST", postDataRaw);
+            return response;
+        }
 
-            using (var writer = new StreamWriter(await request.GetRequestStreamAsync()))
-                await writer.WriteAsync(postDataRaw);
-
-            return await new StreamReader((await request.GetResponseAsync()).GetResponseStream()).ReadToEndAsync();
+        public void Dispose()
+        {
+            _wc.Dispose();
         }
     }
 }
