@@ -1,1 +1,10 @@
 C:\Users\Justin\Documents\Visual Studio 2015\Projects\[Other]\[Review]\PastebinUploader\PastebinUploader\bin\Debug\PastebinUploader.exe.config
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\bin\Debug\PastebinUploader.exe.config
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\bin\Debug\PastebinUploader.exe
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\bin\Debug\PastebinUploader.pdb
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.csprojResolveAssemblyReference.cache
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.MainForm.resources
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.Properties.Resources.resources
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.csproj.GenerateResource.Cache
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.exe
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.pdb
