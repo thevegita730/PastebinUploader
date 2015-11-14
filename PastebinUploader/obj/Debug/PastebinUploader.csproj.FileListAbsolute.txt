@@ -8,3 +8,4 @@ C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\Pas
 C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.csproj.GenerateResource.Cache
 C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.exe
 C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.pdb
+C:\Users\Justin\Documents\GitHub\PastebinUploader\PastebinUploader\obj\Debug\PastebinUploader.SuccessForm.resources
