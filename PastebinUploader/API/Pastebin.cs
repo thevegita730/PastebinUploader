@@ -31,7 +31,7 @@ namespace PastebinUploader
                 { "api_user_password", pass}
             };
 
-            string postDataRaw = string.Join("", postDataCollection.AllKeys.Select(x => string.Format("{0}={1}&", x, postDataCollection[x])));
+            string postDataRaw = string.Concat(postDataCollection.AllKeys.Select(x => string.Format("{0}={1}&", x, postDataCollection[x])));
 
             var response = await _wc.UploadStringTaskAsync("http://pastebin.com/api/api_login.php", "POST", postDataRaw);
 
@@ -49,7 +49,7 @@ namespace PastebinUploader
                 { "api_user_key", userKey}
             };
 
-            string postDataRaw = string.Join("", postDataCollection.AllKeys.Select(x => string.Format("{0}={1}&", x, postDataCollection[x])));
+            string postDataRaw = string.Concat(postDataCollection.AllKeys.Select(x => string.Format("{0}={1}&", x, postDataCollection[x])));
 
             var response = await _wc.UploadStringTaskAsync("http://pastebin.com/api/api_post.php", "POST", postDataRaw);
             return response;
